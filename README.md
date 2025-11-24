@@ -1,3 +1,8 @@
+This is where i got the idea, i used an old code from autohotkey official forum as a starting point: 👉https://www.autohotkey.com/boards/viewtopic.php?t=106962
+
+🌞🌞Now take a look at this, a much more improved version working with GDI+ and working with every screen size, so give it a try 🌹🌹🌹
+
+
 🖼️ Fast Image Preview with GDI+
 
 QuickLook‑style image previews for Windows desktop and Explorer, powered by AutoHotkey and GDI+.  
