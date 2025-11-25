@@ -76,3 +76,13 @@ Your fast image preview script now works seamlessly inside Everything 1.5 (Voidt
 - 🔱 The preview window respects monitor boundaries, scales intelligently, and avoids cursor overlap—just like in other supported environments.  
 
 🌹🌹 This addition makes the script consistent across Desktop, Explorer, and Everything 1.5, giving you a unified QuickLook-style experience wherever you browse files.  
+
+🌿 How to use 🌿
+
+
+
+🌞 Don't forget to copy this script 
+
+👉 (Everything_1.5_Supports_All_Image_Preview_With_GDi.ahk) and put it with all of it's dependencies, library inside the zip file available on this repository:(Fast_Image_Preview_With_GDi+_Original+All_Screen.zip)
+
+🌹  unzip this and copy ahk file in 🎯
