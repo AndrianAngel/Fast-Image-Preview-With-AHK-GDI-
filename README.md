@@ -66,4 +66,13 @@ Hold Left Ctrl over an image file icon to instantly see a scaled preview window 
 
 📝 Recommendation
 - Use Original if you only work on a fixed widescreen (1920×1080).  
-- Use All Screen & MultiMonitors for adaptive handling across different resolutions and multi‑monitor setups.  
+- Use All Screen & MultiMonitors for adaptive handling across different resolutions and multi‑monitor setups.
+
+
+🆕 New Feature: Everything 1.5 Support
+Your fast image preview script now works seamlessly inside Everything 1.5 (Voidtools).  
+- 🔱 Simply select an image file in the Everything results list.  
+- 🔱 Hold down Left Control (Ctrl) to instantly preview the image with the same smooth GDI+ rendering used on Desktop and Explorer.  
+- 🔱 The preview window respects monitor boundaries, scales intelligently, and avoids cursor overlap—just like in other supported environments.  
+
+🌹🌹 This addition makes the script consistent across Desktop, Explorer, and Everything 1.5, giving you a unified QuickLook-style experience wherever you browse files.  
