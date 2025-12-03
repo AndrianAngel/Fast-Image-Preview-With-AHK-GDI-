@@ -68,3 +68,7 @@ Hold Left Ctrl over an image file icon to instantly see a scaled preview window 
 - Use Original if you only work on a fixed widescreen (1920×1080).  
 - Use All Screen & MultiMonitors for adaptive handling across different resolutions and multi‑monitor setups.
 
+🌿🌹 Demo of the enhanced version 🌹🌿
+
+
+![Fast.Image.Preview.gif Settings](Images/Fast.Image.Preview.gif)
