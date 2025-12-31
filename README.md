@@ -73,6 +73,85 @@ Hold Left Ctrl over an image file icon to instantly see a scaled preview window 
 
 ![Fast.Image.Preview.gif Settings](Images/Fast.Image.Preview.gif)
 
+# 🐛 Bug Description and Fixes
+
+## 🔍 The Issues
+
+### 1. 💥 COM Object Instability
+
+**The Bug:** The script was creating a single `Shell.Application` COM object at startup and reusing it throughout the entire session. COM objects can become stale or unresponsive over time, especially when Windows Explorer windows are opened/closed or the explorer.exe process is restarted. This caused the script to stop detecting file paths in Explorer windows, requiring users to restart the entire script or even restart explorer.exe. 😤
+
+**The Fix:** ✅ Implemented a `RefreshShellApp()` function that:
+
+* 🔄 Automatically refreshes the COM object every 30 seconds
+* 🆕 Recreates the COM object if it becomes null/invalid
+* 🛡️ Includes proper error handling with try-catch blocks
+* 🎯 Gracefully degrades by returning empty strings on failures rather than crashing
+* 🧹 Releases the old COM object before creating a new one to prevent memory leaks
+
+<br>
+
+### 2. 💾 Memory Management Issues
+
+**The Bug:** The script wasn't properly cleaning up GDI+ bitmap objects when switching between images or when the preview was hidden. This caused memory leaks that accumulated over extended use, potentially leading to performance degradation and the "screenshot errors" users experienced (GDI+ running out of resources). 📉
+
+**The Fix:** ✅ Added comprehensive cleanup:
+
+* 🗑️ Properly disposes of `hBitmap` using `Gdip_DisposeImage()` before loading new images
+* 🧽 Cleans up bitmap when hiding the preview (Ctrl release)
+* 🚮 Cleans up bitmap when no valid file path is detected
+* 🔚 Releases the COM object on script exit with `shellApp := ""`
+
+<br>
+
+### 3. ⚠️ Error Handling for COM Operations
+
+**The Bug:** When COM operations failed (accessing Explorer windows, getting folder paths), the script would encounter errors without proper exception handling, causing it to stop functioning or display incorrect previews. ❌
+
+**The Fix:** ✅ Wrapped all COM operations in try-catch blocks:
+
+* 🔁 Individual exception handling for each window iteration
+* ➡️ Graceful continuation when one window fails
+* 🔄 Forces COM object refresh on major failures
+* 📝 Returns empty strings instead of crashing
+
+---
+
+## 🛠️ Additional Setup Requirements
+
+### 🛡️ Windows Defender Exceptions
+
+You may need to add exceptions in Windows Defender for:
+
+* 📄 The `.ahk` script file
+* ⚙️ The compiled `.exe` file
+* 📁 The script's working directory
+
+This prevents Defender from interfering with the script's file system and COM access operations.
+
+<br>
+
+### 🔄 Explorer Restart (Previously Required)
+
+In earlier versions, users needed to restart `explorer.exe` to get the script working after certain Windows updates or system changes. The COM refresh mechanism now handles this automatically without requiring manual Explorer restarts. 🎉
+
+⚠️⚠️ Previous Bugs ⚠️⚠️
+
+
+
+📣 Bug using EXE
+
+
+
+![B1 Settings](Images/B1.png)
+
+
+
+📣 Bug Using AHK
+
+
+mage.Preview.gif Settings](Images/Fast.Image.Preview.gif)
+
 
 ⚠️⚠️ Previous Bugs ⚠️⚠️
 
@@ -106,16 +185,4 @@ Hold Left Ctrl over an image file icon to instantly see a scaled preview window 
 
 
 
-👀 Fix 1 for explorer - Cache and Reuse COM Object
-
-
-
-![F1 Settings](Images/F1.png)
-
-
-
-📌 Fix 2 for explorer - Cache and Reuse COM Object
-
-
-
-![F2 Settings](Images/F2.png)
+👀 Fix 1 for
