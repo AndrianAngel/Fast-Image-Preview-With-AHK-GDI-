@@ -100,6 +100,8 @@ Hold Left Ctrl over an image file icon to instantly see a scaled preview window 
 * 🗑️ Properly disposes of `hBitmap` using `Gdip_DisposeImage()` before loading new images
 * 🧽 Cleans up bitmap when hiding the preview (Ctrl release)
 * 🚮 Cleans up bitmap when no valid file path is detected
+* 🔚 Releases the COM object on script exit with `shellApp := ""`n hiding the preview (Ctrl release)
+* 🚮 Cleans up bitmap when no valid file path is detected
 * 🔚 Releases the COM object on script exit with `shellApp := ""`
 
 <br>
@@ -135,29 +137,13 @@ This prevents Defender from interfering with the script's file system and COM ac
 
 In earlier versions, users needed to restart `explorer.exe` to get the script working after certain Windows updates or system changes. The COM refresh mechanism now handles this automatically without requiring manual Explorer restarts. 🎉
 
-⚠️⚠️ Previous Bugs ⚠️⚠️
+
+
+⚠️⚠️Previous Bugs⚠️⚠️
 
 
 
-📣 Bug using EXE
-
-
-
-![B1 Settings](Images/B1.png)
-
-
-
-📣 Bug Using AHK
-
-
-mage.Preview.gif Settings](Images/Fast.Image.Preview.gif)
-
-
-⚠️⚠️ Previous Bugs ⚠️⚠️
-
-
-
-📣 Bug using EXE
+📌 Bug using EXE
 
 
 
@@ -165,7 +151,7 @@ mage.Preview.gif Settings](Images/Fast.Image.Preview.gif)
 
 
 
-📣 Bug Using AHK
+📌 Bug Using AHK
 
 
 
@@ -185,4 +171,16 @@ mage.Preview.gif Settings](Images/Fast.Image.Preview.gif)
 
 
 
-👀 Fix 1 for
+🌸 Fix 1 for explorer - Cache and Reuse COM Object
+
+
+
+![F1 Settings](Images/F1.png)
+
+
+
+❄️ Fix 2 for explorer - Cache and Reuse COM Object
+
+
+
+![F2 Settings](Images/F2.png)
