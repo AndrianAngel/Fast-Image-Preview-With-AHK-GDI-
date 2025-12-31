@@ -72,3 +72,50 @@ Hold Left Ctrl over an image file icon to instantly see a scaled preview window 
 
 
 ![Fast.Image.Preview.gif Settings](Images/Fast.Image.Preview.gif)
+
+
+⚠️⚠️ Previous Bugs ⚠️⚠️
+
+
+
+📣 Bug using EXE
+
+
+
+![B1 Settings](Images/B1.png)
+
+
+
+📣 Bug Using AHK
+
+
+
+![B2 Settings](Images/B2.png)
+
+
+
+🎯 👉 SOLUCE 👈
+
+
+
+🛠️ Windows Defender Exception for the script (Solved Only Desktop Preview)
+
+
+
+![P Settings](Images/P.png)
+
+
+
+👀 Fix 1 for explorer - Cache and Reuse COM Object
+
+
+
+![F1 Settings](Images/F1.png)
+
+
+
+📌 Fix 2 for explorer - Cache and Reuse COM Object
+
+
+
+![F2 Settings](Images/F2.png)
